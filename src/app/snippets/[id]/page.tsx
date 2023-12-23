@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import * as actions from '@/actions';
+import CodeSnippet from "@/components/code-snippet";
 
 interface SnippetDetailPageProps {
   params: {
@@ -35,11 +36,12 @@ export default async function SnippetDetailPage({ params }: SnippetDetailPagePro
           </form>
         </div>
       </div>
-      <pre className="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6 w-full">
+      {/* <pre className="text-sm sm:text-base inline-flex text-left items-center space-x-4 bg-gray-800 text-white rounded-lg p-4 pl-6 w-full">
         <code>
           {snippet?.code}
         </code>
-      </pre>
+      </pre> */}
+      <CodeSnippet code={snippet.code} />
     </div>
   );
 }
