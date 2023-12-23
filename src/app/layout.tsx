@@ -16,7 +16,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+      suppressHydrationWarning={true}
+      className={`${inter.className} bg-gradient-to-r from-rose-100 to-teal-100`}>
+        <div className="container mx-auto px-12 backdrop-blur bg-white/70 rounded mt-4 p-4">
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
